@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    text-align: center;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+body {
+    background-color: #fbfafa;
+}
+
+header {
+    display: flex;
+    background: url('images/Montreal.jpg') center center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    color: white;
+}
+
+b {
+    font-weight: 500;
+}
+
+.main {
+    display: flex;
+    height: 50vh;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.abc {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: 1rem solid rgba(0, 0, 0, 0.25);
+    border-top: 1rem solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1rem solid rgba(0, 0, 0, 0.25);
+}
+
+.nav1 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.logo {
+    padding: 1rem;
+}
+
+.nav2 {
+    margin-left: 1rem;
+}
+
+h1  {
+    font-weight: 200;
+    font-size: 4rem;
+    padding-top: 15rem;
+}
+
+
+
+.general {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    height: 6rem;
+}
+
+.discover {
+    color: #2b2f33;
+    padding-bottom: 3rem;
+}
+
+.dds {
+    display: flex;
+    justify-items: space-between;
+    align-items: flex-start;
+    height: 12rem;
+}
+
+.dds h2 {
+    color: #519df6;
+    padding-bottom: 1rem;
+}
+
+.dds p {
+    font-size: 0.75rem;
+}
+
+.ddd {
+    width: 30rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    align-items: space-around;
+}
+
+.myskills {
+    background-color: #2b2f33;
+    height: 20rem;
+}
+
+
+
+.container {
+    width: 60em;
+    margin: 0 auto;
+}
