@@ -13,6 +13,11 @@ body {
     background-color: #fbfafa;
 }
 
+.container {
+    width: 60em;
+    margin: 0 auto;
+}
+
 header {
     display: flex;
     background: url('images/Montreal.jpg') center center no-repeat;
@@ -30,7 +35,7 @@ b {
     display: flex;
     height: 50vh;
     flex-direction: column;
-    align-content: space-between;
+    justify-items: space-between;
 }
 
 .abc {
@@ -40,41 +45,40 @@ b {
 
 nav {
     display: flex;
-    justify-content: flex-end;
-    padding: 1rem;
 }
 
 nav a {
     color: white;
     text-decoration: none;
+    padding: 1rem;
+    display: inline-block;
+    width: 4.8rem;
 }
 
 nav a:hover {
-    background-color: 1rem solid rgba(0, 0, 0, 0.25);
-    border-top: 1rem solid rgba(0, 0, 0, 0.25);
-    border-bottom: 1rem solid rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.25);
 }
 
-.nav1 {
-    margin-left: 1rem;
-    margin-right: 1rem;
+nav:first-child {
+    margin-right: 0.5rem;
+}
+
+nav:last-child {
+    margin-left: 0.5rem; 
 }
 
 .logo {
     padding: 1rem;
 }
 
-.nav2 {
-    margin-left: 1rem;
-}
 
 h1  {
     font-weight: 200;
     font-size: 4rem;
-    padding-top: 15rem;
+    position: relative;
+    top: 5rem;
+    /* padding-top: 15rem; */
 }
-
-
 
 .general {
     display: flex;
@@ -112,17 +116,249 @@ h1  {
     justify-content: center;
     padding-right: 2rem;
     padding-left: 2rem;
-    align-items: space-around;
+    align-items: space-between;
+}
+
+.ddd:first-child {
+    padding-right: 2rem;
+}
+
+.ddd:last-child {
+    padding-left: 2rem;
 }
 
 .myskills {
-    background-color: #2b2f33;
-    height: 20rem;
+    background-color: #519df6;
+    height: 100vh;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
 }
 
+.myskills h2 {
+    color: white;
+    font-weight: 200;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
 
+.graph {
+    height: 60vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-items: space-around;
+}
 
-.container {
-    width: 60em;
-    margin: 0 auto;
+.skill1 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.skill1 p {
+    text-align: left;
+}
+
+.portfolio {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.portfolio h2 {
+    color: #2b2f33;
+    font-weight: 200;
+    font-size: 3rem;
+    margin-bottom: 1rem;  
+}
+
+.portfolio {
+    height: 100vh;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ppp {
+    width: 33%;
+}
+
+.ppp a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 200;
+    font-size: 2rem;
+}
+
+.ppp a:hover {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1)
+}
+
+.project1 {
+    background: url('images/Bow\ River.jpg') center center;
+    background-size: cover;
+    align-items: center;
+    justify-items: center;  
+    padding: 6rem;
+}
+
+.project2 {
+    background: url('images/Tallinn\ 3.jpg') center center;
+    background-size: cover;
+    align-items: center;
+    justify-items: center;  
+    padding: 6rem;
+}
+
+.project3 {
+    background: url('images/Tatra\ Snow.jpg') center center;
+    background-size: cover;
+    align-items: center;
+    justify-items: center;  
+    padding: 6rem;
+}
+
+.project4 {
+    background: url('images/Pigeon.jpg') center center;
+    background-size: cover;
+    align-items: center;
+    justify-items: center;  
+    padding: 6rem;
+}
+
+.project5 {
+    background: url('images/Maya\ Bay\ 2.jpg') center center;
+    background-size: cover;
+    align-items: center;
+    justify-items: center;  
+    padding: 6rem;
+}
+
+.project6 {
+    background: url('images/Lake\ Bled.jpg') center center;
+    background-size: cover;
+    align-items: center;
+    justify-items: center;  
+    padding: 6rem;
+}
+
+.aboutme {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    background-color: #519df6;
+    color: white;
+}
+
+.aboutme h2 {
+    font-weight: 200;
+    font-size: 3rem;
+    margin-bottom: 1rem;  
+}
+
+.aaa {
+    display: flex;
+    justify-items: space-around;
+    align-items: center;
+}
+
+.me {
+    padding: 2rem;
+}
+
+.me img {
+    border-radius: 50%;
+    width: 20rem;
+}
+
+.text {
+    width: 35rem;
+    padding: 2rem;
+}
+
+.text p {
+    text-align: justify;
+}
+
+.findme {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    background-color: #2b2f33;
+    color: white;
+}
+
+.findme h2 {
+    font-weight: 200;
+    font-size: 3rem;
+    margin-bottom: 1rem; 
+}
+
+.social {
+    display: flex;
+    justify-content: space-around;
+}
+
+.contactme {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    color: #2b2f33;
+}
+
+.contactme h2 {
+    font-weight: 200;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.fields {
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start; 
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.field1 {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    padding: 1rem;
+}
+
+.field2 {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    justify-self: center;
+    padding: 1rem;
+}
+
+.field2 p {
+    margin: 1rem;
+}
+
+button {
+    background-color: #519df6;
+    border: none;
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 200;
+}
+
+.nice {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    background-color: #519df6;
+    color: white;
+}
+
+.nice h2 {
+    font-weight: 200;
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
