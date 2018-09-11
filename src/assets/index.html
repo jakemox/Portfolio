@@ -25,15 +25,19 @@
                         </a>
                     </div>   
                     <nav>
-                        <div class="nav1"><a id="top" href="#top">Home</a></div>
-                        <div class="nav1"><a href="#skills">Skills</a></div>
-                        <div class="nav1"><a href="#folio">Portfolio</a></div>
-                        <div class="nav1"><a href="#info">About Me</a></div>
-                        <div class="nav1"><a href="#contact">Contact</a></div>
+                        <div class="burger"></div>
+                        <div class="nav1">
+                            <a id="top" href="#top">Home</a>
+                            <a href="#skills">Skills</a>
+                            <a href="#folio">Portfolio</a>
+                            <a href="#info">About Me</a>
+                            <a href="#contact">Contact</a>
+                        </div>
                     </nav>
                 </div>
                 <div class="hero">
-                    <h1>Web Developer</h1>
+                    <h1>Jake Moxon</h1>
+                    <h2>Web Developer</h2>
                 </div>
             </div>
         </div>
@@ -49,19 +53,19 @@
         <div class="container">
             <div class="dds">
                 <div class="ddd">
-                    <h2>Discover</h2>
+                    <h3>Discover</h3>
                     <p>Tell me about your project and we brainstorm together the features to create a plan for your product to launch.</p>
                 </div>
                 <div class="ddd">
-                    <h2>Design</h2>
+                    <h3>Design</h3>
                     <p>We design the wireframe and agree together how to create the best experience for your users to present your brand.</p>
                 </div>
                 <div class="ddd">
-                    <h2>Deploy</h2>
+                    <h3>Deploy</h3>
                     <p>We protoype and develop your product. We work together intensily to incorporate your feedback.</p>
                 </div>
                 <div class="ddd">
-                    <h2>Be Ready</h2>
+                    <h3>Be Ready</h3>
                     <p>We deploy your product and now your website is ready to get the traction. Get out there and grow your audience.</p>
                 </div>
             </div>
@@ -70,15 +74,53 @@
     <section class="myskills">
         <div class="container">
             <h2 name="skills">My Skills</h2>
-            <div class="graph">
-                <div class="skill1"><p>HTML</p></div>
-                <div class="skill1"><p>CSS</p></div>
-                <div class="skill1"><p>JavaScript</p></div>
-                <div class="skill1"><p>React</p></div>
-                <div class="skill1"><p>jQuery</p></div>
-                <div class="skill1"><p>PHP</p></div>
-                <div class="skill1"><p>Laravel</p></div>
-                <div class="skill1"><p>UX</p></div>
+            <div class="progress">
+                <div class="skill1">HTML</div>
+                <div class="bar">
+                    <div class="knob" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="progress">
+                <div class="skill1">CSS</div>
+                <div class="bar">
+                    <div class="knob" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="progress">
+                <div class="skill1">JavaScript</div>
+                <div class="bar">
+                    <div class="knob" style="width: 75%"></div>
+                </div>
+            </div>
+            <div class="progress">
+                <div class="skill1">React</div>
+                <div class="bar">
+                    <div class="knob" style="width: 75%"></div>
+                </div>
+            </div>
+            <div class="progress">
+                <div class="skill1">jQuery</div>
+                <div class="bar">
+                    <div class="knob" style="width: 80%"></div>
+                </div>
+            </div>
+            <div class="progress">
+                <div class="skill1">PHP</div>
+                <div class="bar">
+                    <div class="knob" style="width: 20%"></div>
+                </div>
+            </div>
+            <div class="progress">
+                <div class="skill1">Laravel</div>
+                <div class="bar">
+                    <div class="knob" style="width: 10%"></div>
+                </div>
+            </div>
+            <div class="progress">
+                <div class="skill1">UX</div>
+                <div class="bar">
+                    <div class="knob" style="width: 30%"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -90,37 +132,49 @@
                     <div class="project1">
                         <a href="">
                             <img src="images/Bow-River.jpg" alt="bow">
-                            <p>Banff</p>
+                            <div class="after">
+                                <div class="hrad"><span>Banff</span></div>
+                            </div>
                         </a>
                     </div>
                     <div class="project1">
                         <a href="">
                             <img src="images/Tallinn-3.jpg" alt="tallinn">
-                            <p>Tallinn</p>
+                            <div class="after">
+                                <div class="hrad"><span>Tallinn</span></div>
+                            </div>
                         </a>
                     </div>
                     <div class="project1">
                         <a href="">
                             <img src="images/Tatra-Snow.jpg" alt="zakopane">
-                            <p>Zakopane</p>
+                            <div class="after">
+                                <div class="hrad"><span>Zakopane</span></div>
+                            </div>
                         </a>
                     </div>
                     <div class="project1">
                         <a href="">
                             <img src="images/Pigeon.jpg" alt="">
-                            <p>Rome</p>
+                            <div class="after">
+                                <div class="hrad"><span>Rome</span></div>
+                            </div>
                         </a>
                     </div>
                     <div class="project1">
                         <a href="">
                             <img src="images/Maya-Bay.jpg" alt="">
-                            <p>Thailand</p>
+                            <div class="after">
+                                <div class="hrad"><span>Thailand</span></div>
+                            </div>
                         </a>
                     </div>
                     <div class="project1">
                         <a href="">
                             <img src="images/Lake-Bled.jpg" alt="" width="500">
-                            <p>Bled</p>
+                            <div class="after">
+                                <div class="hrad"><span>Bled</span></div>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -173,10 +227,14 @@
             <div class="form">
                 <form id="contact" action="" method="post">
                     <div class="fields">
-                        <div class="field1"><p>First Name*</p><input placeholder="First Name*" type="text" tabindex="1" required></div>
-                        <div class="field1"> Last Name*<input placeholder="Last Name*" type="email" tabindex="2" required></div>
-                        <div class="field1"><p>Email*</p><input placeholder="Email*" type="tel" tabindex="3" required></div>
-                        <div class="field1"><p>Phone</p><input placeholder="Phone" type="url" tabindex="4" required></div>
+                        <div class="field1">
+                            <img src="images/profile-01.svg" alt="" width="40px" height="40px">
+                            <input placeholder="Your Name*" type="text" tabindex="1" required>
+                        </div>
+                        <div class="field1">
+                            <img src="images/email.svg" alt="" width="40px" height="40px">
+                            <input placeholder="Your Email*" type="email" tabindex="3" required>
+                        </div>
                         <div class="field2"><p>Your message*</p><textarea placeholder="Your message*" tabindex="5" required></textarea></div>
                     </div>
                     <div><button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Send Message</button></div>
