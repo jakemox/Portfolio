@@ -19,15 +19,13 @@
         <div class="container">
             <div class="main">
                 <div class="abc">
-                    <div class="logo">
-                        <a href="index.html">
-                            <img src="images/Favicon 4.svg" alt="Logo" width=120px>
-                        </a>
-                    </div>   
+                    <a href="index.html">
+                        <img class="logo" src="images/Favicon 4.svg" alt="Logo">
+                    </a>   
                     <nav>
                         <div class="burger"></div>
                         <div class="nav1">
-                            <a id="top" href="#top">Home</a>
+                            <a href="#top">Home</a>
                             <a href="#skills">Skills</a>
                             <a href="#folio">Portfolio</a>
                             <a href="#info">About Me</a>
@@ -43,7 +41,7 @@
         </div>
     </header>
     <section class="general">
-        <div class="container">
+        <div class="intro">
             <p>
                 Let's work together to make <b>your product stand out</b> . I create beautiful and functional websites. I work with my clients step by step <b>from the idea stage until the fully functioning web application</b>.
             </p>
@@ -79,48 +77,56 @@
                 <div class="bar">
                     <div class="knob" style="width: 90%"></div>
                 </div>
+                <div class="perc">90%</div>
             </div>
             <div class="progress">
                 <div class="skill1">CSS</div>
                 <div class="bar">
                     <div class="knob" style="width: 85%"></div>
                 </div>
+                <div class="perc">85%</div>
             </div>
             <div class="progress">
                 <div class="skill1">JavaScript</div>
                 <div class="bar">
                     <div class="knob" style="width: 75%"></div>
                 </div>
+                <div class="perc">75%</div>
             </div>
             <div class="progress">
                 <div class="skill1">React</div>
                 <div class="bar">
                     <div class="knob" style="width: 75%"></div>
                 </div>
+                <div class="perc">75%</div>
             </div>
             <div class="progress">
                 <div class="skill1">jQuery</div>
                 <div class="bar">
                     <div class="knob" style="width: 80%"></div>
                 </div>
+                <div class="perc">80%</div>
             </div>
             <div class="progress">
                 <div class="skill1">PHP</div>
                 <div class="bar">
                     <div class="knob" style="width: 20%"></div>
                 </div>
+                <div class="perc">20%</div>
             </div>
             <div class="progress">
                 <div class="skill1">Laravel</div>
                 <div class="bar">
                     <div class="knob" style="width: 10%"></div>
                 </div>
+                <div class="perc">10%</div>
             </div>
             <div class="progress">
                 <div class="skill1">UX</div>
                 <div class="bar">
                     <div class="knob" style="width: 30%"></div>
                 </div>
+                <div class="perc">30%</div>
             </div>
         </div>
     </section>
@@ -129,52 +135,38 @@
             <h2 name="folio">My Portfolio</h2>
             <div class="projects">
                 <div class="ppp">
-                    <div class="project1">
-                        <a href="">
-                            <img src="images/Bow-River.jpg" alt="bow">
-                            <div class="after">
+                    <div class="img" style="background-image: url('/images/Bow-River.jpg')">
+                        <a class="project1" href="">
+                            <!-- <img src="images/Bow-River.jpg" alt="bow"> -->
+                            <div class="place"><span>Banff</span></div>
+                            <!-- <div class="after">
                                 <div class="hrad"><span>Banff</span></div>
-                            </div>
+                            </div> -->
                         </a>
                     </div>
-                    <div class="project1">
-                        <a href="">
-                            <img src="images/Tallinn-3.jpg" alt="tallinn">
-                            <div class="after">
-                                <div class="hrad"><span>Tallinn</span></div>
-                            </div>
+                    <div class="img" style="background-image: url('/images/Tallinn-3.jpg')">
+                        <a class="project1" href="">
+                            <div class="place"><span>Tallinn</span></div>
                         </a>
                     </div>
-                    <div class="project1">
-                        <a href="">
-                            <img src="images/Tatra-Snow.jpg" alt="zakopane">
-                            <div class="after">
-                                <div class="hrad"><span>Zakopane</span></div>
-                            </div>
+                    <div class="img" style="background-image: url('/images/Tatra-Snow.jpg')">
+                        <a class="project1" href="">
+                            <div class="place"><span>Zakopane</span></div>
                         </a>
                     </div>
-                    <div class="project1">
-                        <a href="">
-                            <img src="images/Pigeon.jpg" alt="">
-                            <div class="after">
-                                <div class="hrad"><span>Rome</span></div>
-                            </div>
+                    <div class="img" style="background-image: url('/images/Pigeon.jpg')">
+                        <a class="project1" href="">
+                            <div class="place"><span>Rome</span></div>
                         </a>
                     </div>
-                    <div class="project1">
-                        <a href="">
-                            <img src="images/Maya-Bay.jpg" alt="">
-                            <div class="after">
-                                <div class="hrad"><span>Thailand</span></div>
-                            </div>
+                    <div class="img" style="background-image: url('/images/Maya-Bay.jpg')">
+                        <a class="project1" href="">
+                            <div class="place"><span>Thailand</span></div>
                         </a>
                     </div>
-                    <div class="project1">
-                        <a href="">
-                            <img src="images/Lake-Bled.jpg" alt="" width="500">
-                            <div class="after">
-                                <div class="hrad"><span>Bled</span></div>
-                            </div>
+                    <div class="img" style="background-image: url('/images/Lake-Bled.jpg')">
+                        <a class="project1" href="">
+                            <div class="place"><span>Bled</span></div>
                         </a>
                     </div>
                 </div>
@@ -185,12 +177,10 @@
         <div class="container">
             <h2 name="info">About Me</h2>
             <div class="aaa">
-                <div class="me">
-                    <img src="images/Jake.jpg" alt="Jake Moxon" width="300px">
-                </div>
+                <img class="me" src="images/Jake.jpg" alt="Jake Moxon">
                 <div class="text">
                     <p>
-                        <b>My name is Aneta Webbie.</b> I am a full-stack web developer and enjoy learning new trends. <b>I am developing user interfaces in JavaScript and React and backend of my projects in PHP and Laravel.</b>
+                        <b>My name is Jake Moxon.</b> I am a full-stack web developer and enjoy learning new trends. <b>I am developing user interfaces in JavaScript and React and backend of my projects in PHP and Laravel.</b>
                         <br>
                         <br>
                         I am open to learning new technologies and enjoy working with people who are as passionate about all web-related as me.
@@ -209,37 +199,29 @@
         <div class="container">
             <h2>Find me here</h2>
             <div class="social">
-                <div class="icons">
-                    <a href="https://www.instagram.com/jakemox99/" target="_blank"><img src="images/instagram.svg" alt="instagram" width="100px"></a>
-                </div>
-                <div class="icons">
-                    <a href="https://github.com/jakemox" target="_blank"><img src="images/github.svg" alt="github" width="100px"></a>
-                </div>
-                <div class="icons">
-                    <a href="https://www.linkedin.com/in/jake-moxon-74a541134/" target="_blank"><img src="images/linkedin.svg" alt="linkedIn" width="100px"> </a>
-                </div>
+                <a href="https://www.instagram.com/jakemox99/" target="_blank"><img class="icons" src="images/instagram.svg" alt="instagram"></a>
+                <a href="https://github.com/jakemox" target="_blank"><img class="icons" src="images/github.svg" alt="github"></a>
+                <a href="https://www.linkedin.com/in/jake-moxon-74a541134/" target="_blank"><img class="icons" src="images/linkedin.svg" alt="linkedIn"></a>
             </div>
         </div>
     </section>
     <section class="contactme">
         <div class="container">
             <h2 name="contact">Contact Me</h2>
-            <div class="form">
-                <form id="contact" action="" method="post">
-                    <div class="fields">
-                        <div class="field1">
-                            <img src="images/profile-01.svg" alt="" width="40px" height="40px">
-                            <input placeholder="Your Name*" type="text" tabindex="1" required>
-                        </div>
-                        <div class="field1">
-                            <img src="images/email.svg" alt="" width="40px" height="40px">
-                            <input placeholder="Your Email*" type="email" tabindex="3" required>
-                        </div>
-                        <div class="field2"><p>Your message*</p><textarea placeholder="Your message*" tabindex="5" required></textarea></div>
+            <!-- <div class="form"> -->
+                <form class="form" id="contact" action="" method="post">
+                    <div class="field1">
+                        <img src="images/profile-01.svg" alt="" width="40px" height="40px">
+                        <input placeholder="Your Name*" type="text" tabindex="1" required>
                     </div>
-                    <div><button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Send Message</button></div>
+                    <div class="field1">
+                        <img src="images/email.svg" alt="" width="40px" height="40px">
+                        <input placeholder="Your Email*" type="email" tabindex="3" required>
+                    </div>
+                    <div class="field2"><p>Your message*</p><textarea placeholder="Your message*" tabindex="5" required></textarea></div>
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Send Message</button>
                 </form>
-            </div>
+            <!-- </div> -->
         </div>
     </section>
     <section class="nice">
