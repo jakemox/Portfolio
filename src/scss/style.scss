@@ -308,6 +308,27 @@ h3 {
 @media screen and (min-width: 900px) {
     .img {
         width: calc(100% / 3);
+        .place {
+            display: none;
+        }
+    }
+    .photo1:hover .hover1{
+        display: block;
+    }
+    .photo2:hover .hover2{
+        display: block;
+    }
+    .photo3:hover .hover3{
+        display: block;
+    }
+    .photo4:hover .hover4{
+        display: block;
+    }
+    .photo5:hover .hover5{
+        display: block;
+    }
+    .photo6:hover .hover6{
+        display: block;
     }
 }
 
