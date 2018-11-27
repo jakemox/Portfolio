@@ -14,7 +14,12 @@
     <link rel="icon" href="Favicon-3.png" sizes="16x16 32x32" type="image/png">
 </head>
 
+
+
 <body>
+    <div class="thanks">
+        Thanks for your email!
+    </div>
     <header>
         <div class="container">
             <div class="main">
@@ -205,16 +210,16 @@
         <div class="container">
             <h2 name="contact">Contact Me</h2>
             <!-- <div class="form"> -->
-                <form class="form" id="contact" action="" method="post">
+                <form class="form" id="contact" action="contact.php" method="post">
                     <div class="field1">
                         <img src="images/profile-01.svg" alt="" width="40px" height="40px">
-                        <input placeholder="Your Name*" type="text" tabindex="1" required>
+                        <input name="name" placeholder="Your Name*" type="text" tabindex="1" required>
                     </div>
                     <div class="field1">
                         <img src="images/email.svg" alt="" width="40px" height="40px">
-                        <input placeholder="Your Email*" type="email" tabindex="3" required>
+                        <input name="email" placeholder="Your Email*" type="email" tabindex="3" required>
                     </div>
-                    <div class="field2"><p>Your message*</p><textarea placeholder="Your message*" tabindex="5" required></textarea></div>
+                    <div class="field2"><p>Your message*</p><textarea name="message" placeholder="Your message*" tabindex="5" required></textarea></div>
                     <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Send Message</button>
                 </form>
             <!-- </div> -->
