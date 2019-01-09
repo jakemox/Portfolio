@@ -70,9 +70,11 @@ h2 {
 
 .abc {
     display: flex;
-    flex-flow: column-reverse wrap;
-    justify-content: space-around;
-    align-items: center;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    // flex-flow: column-reverse wrap;
+    justify-content: space-between;
+    // align-items: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -82,8 +84,8 @@ h2 {
 .logo {
     width: 90px;
     height: 90px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin: 1rem;
+    // margin-bottom: 1rem;
 }
 
 .logoinvis {
@@ -91,8 +93,9 @@ h2 {
 }
 
 nav {
+    padding-right: 1rem;
+
     a {
-        // display: none;
         text-decoration: none;
         color: $text-color1;
     }
@@ -100,8 +103,7 @@ nav {
     .burger {
         display: block; 
         font-size: 2.5rem;
-        padding: 0 2rem;
-        text-align: center;
+        text-align: right;
     }
 
     .dropdown {
@@ -114,6 +116,7 @@ nav {
         height: initial;
         display: flex;
         flex-flow: column nowrap;
+        text-align: right;
         a {
             margin-bottom: 0.5rem;
         }
@@ -398,7 +401,7 @@ button {
     color: white;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 615px) {
     h1 {
         font-size: 4rem;
     }
@@ -415,8 +418,10 @@ button {
     }
 
     .abc {
-        flex-flow: column-reverse nowrap;
-        justify-content: space-between;
+        align-items: flex-start;
+        flex-flow: row nowrap;
+        // flex-flow: column-reverse nowrap;
+        // justify-content: space-between;
     }
 
     nav {
@@ -427,7 +432,9 @@ button {
         a {
             display: block;
             padding: 1rem;
+            padding-bottom: 0;
             font-size: 1rem;
+            white-space: nowrap
         }
         .dropdown {
             flex-flow: row nowrap;
@@ -482,6 +489,7 @@ button {
     nav {
         a {
             font-size: 1rem;
+            padding: 1rem;
         }
 
         a:hover {
@@ -491,6 +499,10 @@ button {
 }
 
 @media screen and (min-width: 992px) {
+    header {
+        background-attachment: fixed;
+    }
+    
     .ddd {
         width: calc(25% - 10px);
     }
@@ -543,6 +555,16 @@ button {
     .portfolio .container {
             width: 1200px;
         }
+}
+
+@media screen and (max-height: 500px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
 }
 
 

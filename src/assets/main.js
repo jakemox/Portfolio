@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     current.addEventListener('click', function() {
         navigation.classList.toggle('exp');
-        logo.classList.toggle('logoinvis');
+        // logo.classList.toggle('logoinvis');
     });
 });
 
