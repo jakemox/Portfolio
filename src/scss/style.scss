@@ -40,7 +40,8 @@ b {
 
 header {
     display: flex;
-    background: url('images/Montreal.jpg') center center no-repeat;
+    background-image: url('images/Montreal.jpg');
+    background-position: center;
     background-size: cover;
     background-attachment: fixed;
     height: 100vh;
