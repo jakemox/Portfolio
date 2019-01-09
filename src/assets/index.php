@@ -27,11 +27,11 @@
                     <nav>
                         <div id="current-item" class="burger">&#x2630;</div>
                         <div id="navigation" class="nav1 dropdown">
-                            <a href="#top">Home</a>
-                            <a href="#skills">Skills</a>
+                            <a href="/">Home</a>
                             <a href="#folio">Portfolio</a>
+                            <a href="#skills">Skills</a>
                             <a href="#info">About Me</a>
-                            <a href="#contact">Contact</a>
+                            <a href="#contactme">Contact</a>
                         </div>
                     </nav>
                 </div>
@@ -43,7 +43,7 @@
         </div>
     </header>
 
-    <section class="portfolio">
+    <section class="portfolio" id="folio">
         <div class="container">
             <h2 name="folio">My Portfolio</h2>
             <div class="projects">
@@ -85,7 +85,7 @@
         </div>
     </section>
     
-    <section class="myskills">
+    <section class="myskills" id="skills">
         <div class="container">
             <h2 name="skills">My Skills</h2>
             <div class="progress">
@@ -145,7 +145,7 @@
         </div>
     </section>
 
-    <section class="aboutme">
+    <section class="aboutme" id="info">
         <div class="container">
             <h2 name="info">About Me</h2>
             <div class="aaa">
@@ -170,7 +170,7 @@
         </div>
     </section>
 
-    <section class="contactme">
+    <section class="contactme" id="contactme">
         <div class="container">
             <h2 name="contact">Contact Me</h2>
             <!-- <div class="form"> -->
