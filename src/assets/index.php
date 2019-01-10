@@ -21,7 +21,7 @@
         <div class="container">
             <div class="main">
                 <div class="nav-container">
-                    <a href="index.html">
+                    <a href="/">
                         <img id="logo" class="logo" src="images/Favicon 4.svg" alt="Logo">
                     </a>   
                     <nav>
@@ -31,7 +31,8 @@
                             <a href="#folio">Portfolio</a>
                             <a href="#skills">Skills</a>
                             <a href="#info">About Me</a>
-                            <a href="#contactme">Contact</a>
+                            <a href="/graphics.pdf" target="blank">Graphics</a>
+                            <!-- <a href="#contactme">Contact</a> -->
                         </div>
                     </nav>
                 </div>
