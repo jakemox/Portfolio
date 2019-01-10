@@ -70,7 +70,7 @@
                             <div class="place hover4"><span>Exchange Rates</span></div>
                         </a>
                     </div>
-                    <div class="img photo5">
+                    <!-- <div class="img photo5">
                         <a class="project1" href="">
                             <div class="place hover5"><span>Thailand</span></div>
                         </a>
@@ -79,7 +79,7 @@
                         <a class="project1" href="">
                             <div class="place hover6"><span>Bled</span></div>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
