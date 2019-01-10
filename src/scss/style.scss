@@ -68,7 +68,7 @@ h2 {
     align-items: center;
 }
 
-.abc {
+.nav-container {
     display: flex;
     flex-flow: row nowrap;
     align-items: flex-start;
@@ -211,7 +211,7 @@ h3 {
     }
 }
 
-.ppp {
+.projects {
     display: flex;
     flex-flow: column nowrap;
     // justify-content: center;
@@ -290,7 +290,7 @@ h3 {
     }
 }
 
-.aaa {
+.about-content {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
@@ -423,7 +423,7 @@ button {
         margin: 1rem;
     }
 
-    .abc {
+    .nav-container {
         align-items: flex-start;
         flex-flow: row nowrap;
         // flex-flow: column-reverse nowrap;
@@ -460,7 +460,7 @@ button {
         width: calc(50% - 10px);
     }
 
-    .ppp {
+    .projects {
         flex-flow: row wrap;
     }
 
@@ -472,7 +472,7 @@ button {
         // }
     }
 
-    .aaa {
+    .about-content {
         p {
             max-width: 100%;
             font-size: 1rem;
@@ -487,7 +487,7 @@ button {
 
 
 @media screen and (min-width: 768px) {
-    .abc {
+    .nav-container {
         align-items: flex-start;
         flex-flow: row nowrap;
     }
@@ -513,7 +513,7 @@ button {
         width: calc(25% - 10px);
     }
 
-    .aaa {
+    .about-content {
         flex-flow: row nowrap;
         align-items: flex-start;
         p {
