@@ -51,23 +51,32 @@
                     <div class="img photo1">
                         <a class="project1" href="http://scratchmyapp.com" target="blank">
                             <div class="place hover1">
-                                <span>ScratchMyApp</span>
+                                <span class="folio-title">ScratchMyApp</span>
                             </div>
                         </a>
                     </div>
                     <div class="img photo2">
                         <a class="project1" href="/weather-app" target="blank">
-                            <div class="place hover2"><span>Weather App</span></div>
+                            <div class="place hover2">
+                                <span class="folio-title">Weather App</span>
+                                <span class="tech">(React)</span>
+                            </div>
                         </a>
                     </div>
                     <div class="img photo3">
                         <a class="project1" href="/sky-scammer" target="blank">
-                            <div class="place hover3"><span>Flight App</span></div>
+                            <div class="place hover3">
+                                <span class="folio-title">Flight App</span>
+                                <span class="tech">(React)</span>
+                            </div>
                         </a>
                     </div>
                     <div class="img photo4">
                         <a class="project1" href="/exchange-rates" target="blank">
-                            <div class="place hover4"><span>Exchange Rates</span></div>
+                            <div class="place hover4">
+                                <span class="folio-title">Exchange Rates</span>
+                                <span class="tech">(JavaScript)</span>
+                            </div>
                         </a>
                     </div>
                     <!-- <div class="img photo5">
