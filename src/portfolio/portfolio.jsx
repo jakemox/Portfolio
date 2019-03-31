@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 
-import { Section } from '../Styles.jsx';
+import { Section } from '../Styles.js';
 
 const portfolio = {
     background: `white`,
