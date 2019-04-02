@@ -55,3 +55,21 @@ export const Link = styled.a`
     margin: ${props => (props.theme.margin)};
 `;
 
+export const SectionTitle = styled.h2`
+    font-family: 'Raleway';
+    text-align: center;
+    font-size: 3rem;
+`;
+
+export const Button = styled.button`
+    font-family: 'Raleway';
+    background: #f29700;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1rem;
+    padding: 1rem;
+
+`;
+

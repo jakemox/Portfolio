@@ -26,11 +26,12 @@ const NavBar = styled.nav`
     padding: 0.5rem 1rem;
     font-weight: 200;
     height: ${props => props.navExpanded === false ? '60px' : 'initial'};
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(15, 11, 91, 0.75);
+    z-index: 1;
 
     @media (min-width: 768px) {
         height: ${props =>  (props.navSize * 120)}px;
-        background: ${props => props.navSize > 0.5 ? `linear-gradient( to bottom, rgba(0, 0, 0, ${props.navSize / 2}), rgba(0, 0, 0, ${1 - props.navSize}) )` : `rgba(0, 0, 0, ${1 - (props.navSize / 2)})`};
+        background: ${props => props.navSize > 0.5 ? `linear-gradient( to bottom, rgba(15, 11, 91, ${props.navSize / 2}), rgba(15, 11, 91, ${1 - props.navSize}) )` : window.scrollY < window.innerHeight ? (`rgba(15, 11, 91, ${1 - (props.navSize / 2)})`) :  `rgba(15, 11, 91, 1)`};
         align-items: flex-start;
     }
 `;
@@ -155,7 +156,7 @@ export default class Hero extends React.Component {
 
         this.state = {
             navSize: 1,
-            navExpanded: false,
+            navExpanded: false
         }
 
         this.navExpand = this.navExpand.bind(this);
