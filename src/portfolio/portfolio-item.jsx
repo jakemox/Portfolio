@@ -2,64 +2,99 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button } from '../Styles.js';
 
-
 const Item = styled.div`
-    width: 80%;
+    width: 100%;
     height: 450px;
+    margin: 2rem;
+    display: flex;
+    flex-direction: ${props => props.index % 2 === 0 ? 'row' : 'row-reverse'};
+`;
+
+const Image = styled.div`
+    width: 100%;
+    height: 100%;
     background: ${props => `
         linear-gradient(
-            to right,
-            rgba(0, 0, 0, 0.75), 
-            rgba(15, 11, 91, 0.75)
+            ${props.index % 2 === 0 ? 'to right' : 'to left'},
+            rgba(0, 0, 0, 0.5), 
+            rgba(15, 11, 91, 0.5)
         ),
         url(${props.image})`};
     background-position: center;
     background-size: cover;
-    /* position: relative;
-    left: ${props => props.index % 2 == 0 ? '0' : ''};
-    right: ${props => props.index % 2 == 0 ? '' : '0'}; */
-    margin: 2rem auto;
     display: flex;
-    justify-content: center;
+    flex-direction: ${props => props.index % 2 === 0 ? 'row' : 'row-reverse'};
+    justify-content: space-between;
     align-items: center;
+    padding: 0.5rem;
 `;
 
 const PortfolioDetails = styled.div`
+    width: 35%;
+    height: 100%;
+    background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    padding: 2rem;
 `;
 
 const PortfolioTitle = styled.h3`
     font-family: 'Raleway';
-    font-size: 3rem;
+    font-size: 2.5rem;
     /* position: relative; */
     color: white;
-    text-shadow: 0 -1px 12px rgba(0, 0, 0, 0.5); 
-    margin: 1rem 0;
+    margin: 0;
     /* top: -2.25rem; */
-    line-height: 3rem;
+    line-height: 2.5rem;
 `;
 
 const Description = styled.p`
     font-family: 'Halant';
-    font-style: italic;
-    color: white;
+    /* font-style: italic; */
+    color: black;
     font-size: 1.25rem;
+    line-height: 1.25rem;
+    margin: 0;
+    /* text-align: justify; */
 `; 
+
+const Stack = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+`;
+
+const StackItem = styled.div`
+    color: rgb(62, 62, 62);
+    font-family: 'Raleway';
+    font-size: 0.8rem;
+    margin: 0;
+    font-weight: 700;
+`;
 
 export default class PortfolioItem extends React.Component {
     render() {
         console.log(this.props.index);
         return (
-            <Item image={this.props.image} index={this.props.index}>
-                <PortfolioDetails>
-                    <PortfolioTitle>{this.props.title.toUpperCase()}</PortfolioTitle>
-                    <Description>{this.props.subtitle}</Description>
-                    <Button>CASE STUDY</Button>
-                </PortfolioDetails>
-            </Item>
+            // <Fade>
+                <Item index={this.props.index}>
+                    <Image image={this.props.image} index={this.props.index}>
+                        <PortfolioTitle>{this.props.title.toUpperCase()}</PortfolioTitle>
+                        <PortfolioDetails index={this.props.index}>
+                            <Stack>
+                                {this.props.stack.map(
+                                    (stackItem, i) =>
+                                    <StackItem key={i}>{stackItem}</StackItem>
+                                )}
+                            </Stack>
+                            <Description>{this.props.subtitle}</Description>
+                            <Button>VIEW PROJECT</Button>
+                        </PortfolioDetails>
+                    </Image>
+                </Item>
+            // </Fade>
         )
     }
 }

@@ -69,7 +69,6 @@ export const Button = styled.button`
     font-size: 1rem;
     font-weight: 600;
     line-height: 1rem;
-    padding: 1rem;
-
+    padding: 0.75rem;
+    width: 100%;
 `;
-

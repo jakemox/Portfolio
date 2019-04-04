@@ -32,6 +32,7 @@ export default class Portfolio extends React.Component {
                                     title={portfolioItem.title}
                                     subtitle={portfolioItem.subtitle}
                                     image={portfolioItem.image}
+                                    stack={portfolioItem.stack}
                                 />
                             )}
                         </CaseStudies>
