@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Button } from '../Styles.js';
+import Fade from 'react-reveal/Fade';
 
 const Item = styled.div`
-    width: 100%;
+    /* width: 100%; */
     height: 450px;
     margin: 2rem;
     display: flex;
     flex-direction: ${props => props.index % 2 === 0 ? 'row' : 'row-reverse'};
+    /* opacity: 0; */
 `;
 
 const Image = styled.div`
@@ -75,10 +77,11 @@ const StackItem = styled.div`
 `;
 
 export default class PortfolioItem extends React.Component {
+    
     render() {
-        console.log(this.props.index);
+        console.log(this);
         return (
-            // <Fade>
+          <Fade>
                 <Item index={this.props.index}>
                     <Image image={this.props.image} index={this.props.index}>
                         <PortfolioTitle>{this.props.title.toUpperCase()}</PortfolioTitle>
@@ -94,7 +97,7 @@ export default class PortfolioItem extends React.Component {
                         </PortfolioDetails>
                     </Image>
                 </Item>
-            // </Fade>
+          </Fade>
         )
     }
 }
