@@ -7,6 +7,80 @@ import burger from '../img/burger.svg';
 import cross from '../img/cross.svg';
 import { Section } from '../Styles.js';
 
+export default class Hero extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            navSize: 1,
+            navExpanded: false
+        }
+
+        this.navExpand = this.navExpand.bind(this);
+        this._handleScroll = this._handleScroll.bind(this);
+    }
+
+    componentDidMount() {
+        window.onscroll = () => this._handleScroll()
+    }
+
+    _handleScroll() {
+        if (window.scrollY < 60) {
+            this.setState({
+                navSize: (120 - window.scrollY) / 120,
+            })
+        } else {
+            this.setState({
+                navSize: 0.5,
+            })
+        }
+    }
+
+    navExpand() {
+        if (this.state.navExpanded === false) {
+            this.setState({
+                navExpanded: true,
+            })
+        } else {
+            this.setState({
+                navExpanded: false,
+            })
+        }
+    }
+    
+    render() {
+        return (
+            <ThemeProvider theme={header}>
+                <>
+                    <GlobalStyle />
+                    <Section>
+                        <NavBar navSize={this.state.navSize}>
+                            <LogoLink navSize={this.state.navSize} href="/">
+                                <Logo navSize={this.state.navSize} src={logo} alt="Logo"></Logo>
+                            </LogoLink>
+                            <Burger onClick={this.navExpand}>
+                                <BurgerIcon visible={this.state.navExpanded} src={burger}></BurgerIcon>
+                                <CrossIcon visible={this.state.navExpanded} src={cross}></CrossIcon>
+                            </Burger>
+                            <NavItems navExpanded={this.state.navExpanded}>
+                                <NavList><NavLink href="#folio">PORTFOLIO</NavLink></NavList>
+                                <NavList><NavLink href="#skills">SKILLS</NavLink></NavList>
+                                <NavList><NavLink href="#info">ABOUT</NavLink></NavList>
+                                <NavList><NavLink href="/graphics.pdf" target="blank">GRAPHICS</NavLink></NavList>
+                                {/* <a href="#contactme">Contact</a> */}
+                            </NavItems>
+                        </NavBar>
+                        <HeroTitle>
+                            <h1>JAKE &nbsp;MOXON</h1>
+                            <Job>Web Developer</Job>
+                        </HeroTitle>
+                    </Section>
+                </>
+            </ThemeProvider>
+        )
+    }
+};
+
 const header = {
     background: `url(${montreal})`,
     height: '100vh',
@@ -147,79 +221,3 @@ const Job = styled.h2`
         font-size: 2rem;
     }
 `;
-
-
-
-export default class Hero extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            navSize: 1,
-            navExpanded: false
-        }
-
-        this.navExpand = this.navExpand.bind(this);
-        this._handleScroll = this._handleScroll.bind(this);
-    }
-
-    componentDidMount() {
-        window.onscroll = () => this._handleScroll()
-    }
-
-    _handleScroll() {
-        if (window.scrollY < 60) {
-            this.setState({
-                navSize: (120 - window.scrollY) / 120,
-            })
-        } else {
-            this.setState({
-                navSize: 0.5,
-            })
-        }
-    }
-
-    navExpand() {
-        if (this.state.navExpanded === false) {
-            this.setState({
-                navExpanded: true,
-            })
-        } else {
-            this.setState({
-                navExpanded: false,
-            })
-        }
-    }
-    
-    render() {
-        return (
-            <ThemeProvider theme={header}>
-                <>
-                    <GlobalStyle />
-                    <Section>
-                        <NavBar navSize={this.state.navSize}>
-                            <LogoLink navSize={this.state.navSize} href="/">
-                                <Logo navSize={this.state.navSize} src={logo} alt="Logo"></Logo>
-                            </LogoLink>
-                            <Burger onClick={this.navExpand}>
-                                <BurgerIcon visible={this.state.navExpanded} src={burger}></BurgerIcon>
-                                <CrossIcon visible={this.state.navExpanded} src={cross}></CrossIcon>
-                            </Burger>
-                            <NavItems navExpanded={this.state.navExpanded}>
-                                <NavList><NavLink href="#folio">PORTFOLIO</NavLink></NavList>
-                                <NavList><NavLink href="#skills">SKILLS</NavLink></NavList>
-                                <NavList><NavLink href="#info">ABOUT</NavLink></NavList>
-                                <NavList><NavLink href="/graphics.pdf" target="blank">GRAPHICS</NavLink></NavList>
-                                {/* <a href="#contactme">Contact</a> */}
-                            </NavItems>
-                        </NavBar>
-                        <HeroTitle>
-                            <h1>JAKE &nbsp;MOXON</h1>
-                            <Job>Web Developer</Job>
-                        </HeroTitle>
-                    </Section>
-                </>
-            </ThemeProvider>
-        )
-    }
-}

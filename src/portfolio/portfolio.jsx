@@ -4,18 +4,6 @@ import PortfolioItem from './portfolio-item.jsx'
 import styled, { ThemeProvider } from 'styled-components';
 import { Section, Container, SectionTitle } from '../Styles.js';
 
-const portfolio = {
-    background: `white`,
-    color: 'black',
-    margin: '1rem'
-};
-
-const CaseStudies = styled.div`
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-`;
-
 export default class Portfolio extends React.Component {
     render() {
         return (
@@ -41,4 +29,16 @@ export default class Portfolio extends React.Component {
             </ThemeProvider>
         )
     }
-}
+};
+
+const portfolio = {
+    background: `white`,
+    color: 'black',
+    margin: '1rem'
+};
+
+const CaseStudies = styled.div`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+`;

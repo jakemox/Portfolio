@@ -13,6 +13,7 @@ body {
 
 .react-reveal {
   width: 100%;
+  box-sizing: border-box;
 }
 
 

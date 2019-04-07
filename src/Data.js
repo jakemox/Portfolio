@@ -22,7 +22,7 @@ export const data = {
             title: 'Weather Forecast',
             subtitle: 'World weather forecasts for the week ahead',
             image: require('./img/weather.jpg'),
-            stack: ['React', 'Styled Components']
+            stack: ['React', 'HTML', 'Styled Components']
         },
         {
             title: 'Exchange Rates',
