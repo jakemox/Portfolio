@@ -59,35 +59,10 @@ export const Link = styled.a`
 export const SectionTitle = styled.h2`
     font-family: 'Raleway';
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
+
+    @media (min-width: 768px) {
+        font-size: 3rem;
+    }
 `;
 
-export const Button = styled.button`
-    font-family: 'Raleway';
-    background: #f29700;
-    border: solid 4px #f29700;;
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1rem;
-    padding: 0.75rem;
-    width: 225px;
-    transition: 0.5s;
-
-    a {
-        color: white;
-        text-decoration: none;
-        transition: 0.5s;
-    }
-
-    :hover {
-        background: white;
-
-        a {
-            color: #f29700;
-        }
-    }
-
-    @media (min-width: 992px) {
-        width: 100%;
-    } 
-`;
