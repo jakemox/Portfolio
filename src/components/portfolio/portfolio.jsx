@@ -1,8 +1,8 @@
 import React from 'react';
-import { data } from '../Data.js';
+import { data } from '../../data/data.js';
 import PortfolioItem from './portfolio-item.jsx'
 import styled, { ThemeProvider } from 'styled-components';
-import { Section, Container, SectionTitle } from '../Styles.js';
+import { Section, Container, SectionTitle } from '../../styles/styles.js';
 
 export default class Portfolio extends React.Component {
     render() {
@@ -21,6 +21,7 @@ export default class Portfolio extends React.Component {
                                     subtitle={portfolioItem.subtitle}
                                     image={portfolioItem.image}
                                     stack={portfolioItem.stack}
+                                    link={portfolioItem.link}
                                 />
                             )}
                         </CaseStudies>

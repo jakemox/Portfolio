@@ -1,11 +1,12 @@
 import React from 'react';
-import { GlobalStyle } from '../Styles.js';
+import { GlobalStyle } from '../../styles/styles.js';
 import styled, { ThemeProvider } from 'styled-components';
-import montreal from '../img/montreal.jpg';
-import logo from '../img/logo.svg';
-import burger from '../img/burger.svg';
-import cross from '../img/cross.svg';
-import { Section } from '../Styles.js';
+import { disableBodyScroll } from 'body-scroll-lock';
+import montreal from '../../img/montreal.jpg';
+import logo from '../../img/logo.svg';
+import burger from '../../img/burger.svg';
+import cross from '../../img/cross.svg';
+import { Section } from '../../styles/styles.js';
 
 export default class Hero extends React.Component {
     constructor(props) {
@@ -47,7 +48,20 @@ export default class Hero extends React.Component {
             })
         }
     }
+
+    aboutVisible = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        this.props.action({
+            visible: true
+        });
+        disableBodyScroll();
+    }
     
+    scrollToPortfolio() {
+        // let windowHeight = window.innerHeight - 60
+        window.scrollTo({ top: window.innerHeight - 60, behavior: 'smooth' });
+    }
+
     render() {
         return (
             <ThemeProvider theme={header}>
@@ -63,10 +77,10 @@ export default class Hero extends React.Component {
                                 <CrossIcon visible={this.state.navExpanded} src={cross}></CrossIcon>
                             </Burger>
                             <NavItems navExpanded={this.state.navExpanded}>
-                                <NavList><NavLink href="#folio">PORTFOLIO</NavLink></NavList>
-                                <NavList><NavLink href="#skills">SKILLS</NavLink></NavList>
-                                <NavList><NavLink href="#info">ABOUT</NavLink></NavList>
-                                <NavList><NavLink href="/graphics.pdf" target="blank">GRAPHICS</NavLink></NavList>
+                                <NavList><NavLink onClick={this.scrollToPortfolio}>PORTFOLIO</NavLink></NavList>
+                                {/* <NavList><NavLink href="#skills">SKILLS</NavLink></NavList> */}
+                                <NavList><NavLink onClick={this.aboutVisible}>ABOUT</NavLink></NavList>
+                                {/* <NavList><NavLink href="/graphics.pdf" target="blank">GRAPHICS</NavLink></NavList> */}
                                 {/* <a href="#contactme">Contact</a> */}
                             </NavItems>
                         </NavBar>
@@ -144,7 +158,7 @@ const CrossIcon = styled.img`
     position: absolute;
     top: 0;
     left: 0;
-
+    transition: 0.5s;
 `;
 
 const NavList = styled.li`
@@ -159,6 +173,7 @@ const NavLink = styled.a`
     letter-spacing: 2px;
     font-weight: 600;
     font-size: 0.75rem;
+    cursor: pointer;
 
     @media (min-width: 768px) {
         margin: 0 0.75rem;
@@ -167,7 +182,7 @@ const NavLink = styled.a`
 
 const NavItems = styled.ul`
     line-height: 45px;
-    height: ${props => props.navExpanded === false ? '0px' : 'calc(50vh - 60px)'};
+    height: ${props => props.navExpanded === false ? '0px' : '100px'};
     overflow: hidden;
     display: flex;
     flex-flow: column;
@@ -196,7 +211,7 @@ const LogoLink = styled.a`
     @media (min-width: 768px) {
         height: ${props => `calc(${props.navSize * 120}px - 1rem)`};
     }
-`
+`;
 
 const Logo = styled.img`
     height: calc(60px - 1rem);

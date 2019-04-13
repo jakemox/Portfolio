@@ -50,16 +50,14 @@ export const Section = styled.section`
     }
 `;
 
-export const Link = styled.a`
-    text-decoration: none;
-    color: ${props => (props.theme.color)};
-    margin: ${props => (props.theme.margin)};
-`;
-
 export const SectionTitle = styled.h2`
     font-family: 'Raleway';
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
+
+    @media (min-width: 480px) {
+        font-size: 2rem;
+    }
 
     @media (min-width: 768px) {
         font-size: 3rem;

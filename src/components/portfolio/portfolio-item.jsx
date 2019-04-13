@@ -1,8 +1,6 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-// import { Button } from '../Styles.js';
 import Fade from 'react-reveal/Fade';
-// import { Link } from '../Styles.js'
  
 export default class PortfolioItem extends React.Component {
     constructor(props) {
@@ -54,7 +52,7 @@ export default class PortfolioItem extends React.Component {
                             <Description hovered={this.state.hovered} index={this.props.index}>{this.props.subtitle}</Description>
                         </PortfolioDetails>
                         <ButtonContainer hovered={this.state.hovered} index={this.props.index}>
-                            <Button hovered={this.state.hovered} href="">VIEW PROJECT</Button>
+                            <Button target="blank" hovered={this.state.hovered} href={this.props.link}>VIEW PROJECT</Button>
                         </ButtonContainer>
                     </PortfolioGeneral>
                 </Item>
@@ -70,7 +68,7 @@ const Item = styled.div`
         linear-gradient(
             ${props.index % 2 === 0 ? 'to right' : 'to left'},
             ${props.hovered === false ? 
-                'rgba(48,133,163,0.75), rgba(255,255,255,0.3)' : 
+                'rgba(0,0,0,0.5), rgba(255,255,255,0.3)' : 
                 'rgba(48,133,163,0.5), rgba(0, 0, 0, 0.5)'
             }
         ),
@@ -168,7 +166,7 @@ const PortfolioTitle = styled.h3`
     font-family: 'Raleway';
     font-size: 1.5rem;
     position: relative;
-    top: 162px;
+    top: 176px;
     color: white;
     margin: 0;
     line-height: 1.5rem;
@@ -177,7 +175,7 @@ const PortfolioTitle = styled.h3`
 
     @media (min-width: 480px) {
         font-size: 2.5rem;
-        top: calc(225px - 1.25rem);
+        top: 166px;
         line-height: 2.5rem;
     } 
 
@@ -256,10 +254,15 @@ const Button = styled.a`
         color: #f29700;
     }
 
+    @media (min-width: 480px) {
+        width: 180px;
+        margin: 2rem auto;
+    } 
+
     @media (min-width: 992px) {
         /* margin: auto; */
         /* ${props => props.hovered === false ? 'width: 0;' : ''};  */
-        width: 180px;
+        margin: 2rem;
         overflow: hidden;
         /* ${props => props.hovered === false ? 'padding: 0;' : ''};  */
         /* ${props => props.hovered === false ? 'border: none;' : ''}; */
