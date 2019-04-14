@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Merriweather', sans-serif;
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+}
+
+.react-reveal {
+  width: 100%;
+  box-sizing: border-box;
+}
