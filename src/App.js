@@ -1,35 +1,52 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './index.css';
+import { data } from './data/data.js';
+import Home from './components/home/home.jsx'
 import Hero from './components/hero/hero.jsx';
-import Portfolio from './components/portfolio/portfolio.jsx';
-import About from './components/about/about.jsx';
+// import Portfolio from './components/portfolio/portfolio.jsx';
+// import About from './components/about/about.jsx';
 import Footer from './components/footer/footer.jsx';
+import CaseStudyInfo from './components/case-study/case-study.jsx';
 
 class App extends Component {
-	constructor(props) {
-        super(props);
-
-        this.state = {
-            aboutVisible: false
-        }
-	}
-	
-	changeAboutVisible = (data) => {
-		this.setState({
-			aboutVisible: data.visible
-		})
-	}
-
 	render() {
+		return (
+			<Router>
+				<Route exact path="/" component={Home} />
+				<Route
+					path="/:name"
+					render={ (props) =>
+						<CaseStudy
+							itemData= {data.portfolioItems} {...props}
+						/>
+					}
+				/>
+			</Router>
+		);
+	}
+}
+
+const CaseStudy = ({match, itemData}) => {
+	var project = itemData.find(p => p.name === match.params.name);
+	
+	console.log(project);
 	return (
 		<>
-			<Hero action={this.changeAboutVisible}/>
-			<Portfolio />
-			<About action={this.changeAboutVisible} visible={this.state.aboutVisible}/>
+			<Hero
+				page={project.name}
+				title={project.title}
+				subtitle={project.subtitle}
+				image={project.image}
+			/>
+			<CaseStudyInfo
+				description={project.description}
+				stack={project.stack}
+				link={project.link}
+			/>
 			<Footer />
 		</>
-	);
-}
+	)
 }
 
 export default App;

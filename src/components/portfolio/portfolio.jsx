@@ -17,11 +17,13 @@ export default class Portfolio extends React.Component {
                                 <PortfolioItem 
                                     key={i}
                                     index={i}
+                                    name={portfolioItem.name}
                                     title={portfolioItem.title}
                                     subtitle={portfolioItem.subtitle}
                                     image={portfolioItem.image}
                                     stack={portfolioItem.stack}
                                     link={portfolioItem.link}
+                                    // action={this.changeProjectSelected}
                                 />
                             )}
                         </CaseStudies>

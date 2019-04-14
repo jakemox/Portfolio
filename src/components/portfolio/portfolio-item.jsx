@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
  
@@ -43,7 +44,7 @@ export default class PortfolioItem extends React.Component {
                     <Stack hovered={this.state.hovered}>
                         {this.props.stack.map(
                             (stackItem, i) =>
-                            <StackItem key={i} index={i}>{stackItem}</StackItem>
+                            <StackItem key={i} index={i}>{stackItem.name}</StackItem>
                         )}
                     </Stack>
                     <PortfolioGeneral hovered={this.state.hovered} index={this.props.index}>
@@ -52,7 +53,16 @@ export default class PortfolioItem extends React.Component {
                             <Description hovered={this.state.hovered} index={this.props.index}>{this.props.subtitle}</Description>
                         </PortfolioDetails>
                         <ButtonContainer hovered={this.state.hovered} index={this.props.index}>
-                            <Button target="blank" hovered={this.state.hovered} href={this.props.link}>VIEW PROJECT</Button>
+                            <Button 
+                                target="blank"
+                                hovered={this.state.hovered}
+                                // href={`/casestudy/${this.props.name}`}
+                                // onClick={this.action}
+                            >
+                                <Link
+                                    to={`/${this.props.name}`}
+                                >VIEW PROJECT</Link>
+                            </Button>
                         </ButtonContainer>
                     </PortfolioGeneral>
                 </Item>
@@ -62,7 +72,6 @@ export default class PortfolioItem extends React.Component {
 };
 
 const Item = styled.div`
-    /* width: 100%; */
     height: 450px;
     background: ${props => `
         linear-gradient(
@@ -208,9 +217,10 @@ const ButtonContainer = styled.div`
     } 
 `;
 
-const Button = styled.a`
+const Button = styled.button`
     font-family: 'Raleway';
     color: white;
+    background: none;
     border: solid 2px white;
     font-size: 1rem;
     font-weight: 600;
