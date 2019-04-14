@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import { enableBodyScroll } from 'body-scroll-lock';
 import jake from '../../img/jake.jpg';
 import { data } from '../../data/data.js';
@@ -28,7 +28,7 @@ export default class About extends React.Component {
                 <Text>
                     <SectionTitle>ABOUT</SectionTitle>
                     <Description>
-                        Web developer with over a year of experience, I am currently working at Luxus Worldwide. Combining my analytical and creative skills, I write clean, tested Object Orientated code to produce responsive, sustainable web apps. I love honing my technical skills by working on personal projects and keeping up with the latest technology and attending meetups. I also enjoy sports, travel and photography. Please feel free to connect via <Link href="https://www.linkedin.com/in/jakemox/">linkedIn</Link> or <Link href="https://github.com/jakemox">GitHub</Link>.
+                        London based web developer with over a year of experience, I am currently working at Luxus Worldwide. Combining my analytical and creative skills, I write clean, tested Object Orientated code to produce responsive, sustainable web apps. I love honing my technical skills by working on personal projects and keeping up with the latest technology and attending meetups. I also enjoy sports, travel and photography. Please feel free to connect via <Link href="https://www.linkedin.com/in/jakemox/">linkedIn</Link> or <Link href="https://github.com/jakemox">GitHub</Link>.
                     </Description>
                     <Stack>
                         {data.stack.map(
@@ -56,8 +56,9 @@ export default class About extends React.Component {
 
 const AboutAll = styled.div`
     width: 100vw;
-    height: ${props => props.visible === false ? '200vh' : '100vh'};;
+    height: ${props => props.visible === false ? '200vh' : '100vh'};
     display: flex;
+    visibility: ${props => props.visible === false ? 'hidden' : 'visible'};
     flex-direction: column-reverse;
     justify-content: space-between;
     position: fixed;

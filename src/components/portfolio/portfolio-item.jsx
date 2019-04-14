@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
  
 export default class PortfolioItem extends React.Component {
@@ -123,12 +123,10 @@ const PortfolioGeneral = styled.div`
         flex-direction: ${props => props.index % 2 === 0 ? 'row' : 'row-reverse'};
         justify-content: center;
         align-items: center;
-        /* width: ${props => props.hovered === false ? '130%' : '100%'}; */
         width: fit-content;
         height: 306px;
         position: absolute;
         ${props => props.index % 2 === 0 ? 'left: 0;' : 'right: 0;'};
-        /* ${props => props.hovered === false ? 'transition-delay: 0.5s' : ''}; */
         transition: 0.5s;
     } 
 `;
@@ -136,11 +134,8 @@ const PortfolioGeneral = styled.div`
 const PortfolioDetails = styled.div`
     width: 100%;
     height: 100%;
-    /* background-color: white; */
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
-    /* align-items: flex-end; */
     padding: 2rem 1rem;
     position: relative;
 
@@ -149,13 +144,6 @@ const PortfolioDetails = styled.div`
         height: 100%;
         padding: 0 1rem;
         display: block;
-        /* position: absolute; */
-        /* padding: ${props => props.hovered === false ? '0 1rem' : (props.index % 2 === 0 ? '0 1rem' : '0 1rem')}; */
-        /* ${props => props.hovered === false ? 'border: none;' : (props.index % 2 === 0 ? 'border-right: 2px solid white;' : 'border-left: 2px solid white;')}; */
-        /* border-right: ${props => props.index % 2 === 0 ? '2px solid white' : 'none'}; */
-        /* border-left: ${props => props.index % 2 === 0 ? 'none' : '2px solid white'}; */
-        /* justify-content: flex-start; */
-        /* align-items: ${props => props.hovered === false ? 'center' : (props.index % 2 === 0 ? 'flex-start' : 'flex-end')}; */
         text-align: ${props => props.index % 2 === 0 ? 'left' : 'right'};
         transition: 0.5s;
         ${props => props.hovered === false ? 'transition-delay: 0.3s' : ''};
@@ -181,17 +169,11 @@ const PortfolioTitle = styled.h3`
 
     @media (min-width: 992px) {
         position: initial;
-        /* position: absolute; */
         margin-top: calc(153px - 1.25rem);
         transition: 1s;
-        margin: ${props => props.index % 2 === 0 ? '127px 0 0 0' : '127px 0 0 0)'};
-        /* margin-left: ${props => props.index % 2 === 0 ? '0' : ''};
-        margin-right: ${props => props.index % 2 === 0 ? '' : '0'}; */
-        /* margin: 0; */
+        margin: 127px 0 0 0;
         text-align: ${props => props.index % 2 === 0 ? 'left' : 'right'};
-        /* text-align: ${props => props.hovered === false ? 'center' : 'left'}; */
         width: ${props => props.index % 2 === 0 ? (props.hovered === false ? '100%' : '0') : '100%'};
-        /* ${props => props.index % 2 === 0 ? 'float: left;' : 'float: right;'}; */
     } 
 `;
 
@@ -200,7 +182,6 @@ const Description = styled.p`
     font-weight: 300;
     color: #FFE5B4;
     font-size: 0.9rem;
-    /* line-height: 1rem; */
     margin-top: 0.5rem;
     display: none;
     width: initial;
@@ -211,19 +192,16 @@ const Description = styled.p`
         transition: 0.3s;
         ${props => props.hovered === true ? 'transition-delay: 0.5s' : ''};
         width: 100%;
-        /* ${props => props.index % 2 === 0 ? 'float: left;' : 'float: right;'}; */
     }
 `; 
 
 const ButtonContainer = styled.div`
     @media (min-width: 992px) {
-        /* width: ${props => props.hovered === false ? '300px' : '25%'}; */
         width: 217px;
         height: 100%;
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        /* ${props => props.hovered === false ? 'border: none;' : (props.index % 2 === 0 ? 'border-right: 2px solid white;' : 'border-left: 2px solid white;')}; */
         border-left: ${props => props.index % 2 === 0 ? '2px solid white' : 'none'};
         border-right: ${props => props.index % 2 === 0 ? 'none' : '2px solid white'};
         transition: 0.5s;
@@ -232,15 +210,12 @@ const ButtonContainer = styled.div`
 
 const Button = styled.a`
     font-family: 'Raleway';
-    /* background: #f29700; */
+    color: white;
     border: solid 2px white;
     font-size: 1rem;
     font-weight: 600;
     line-height: 1rem;
-    /* padding: 0.75rem; */
     height: calc(2.5rem - 4px);
-    transition: 0.5s;
-    color: white;
     text-decoration: none;
     text-align: center;
     margin: 2rem;
@@ -250,8 +225,8 @@ const Button = styled.a`
     align-items: center;
 
     :hover {
-        background: white;
-        color: #f29700;
+        background: rgba(48,133,163,0.5);
+        color: white;
     }
 
     @media (min-width: 480px) {
@@ -260,12 +235,8 @@ const Button = styled.a`
     } 
 
     @media (min-width: 992px) {
-        /* margin: auto; */
-        /* ${props => props.hovered === false ? 'width: 0;' : ''};  */
         margin: 2rem;
         overflow: hidden;
-        /* ${props => props.hovered === false ? 'padding: 0;' : ''};  */
-        /* ${props => props.hovered === false ? 'border: none;' : ''}; */
     } 
 `;
 
@@ -292,7 +263,6 @@ const StackItem = styled.div`
     font-size: 0.7rem;
     margin: 0;
     font-weight: 700;
-    /* width: 100px; */
     text-align: center;
     ${props => props.index > 2 ? 'display: none;' : ''};
 

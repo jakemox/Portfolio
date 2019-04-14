@@ -1,5 +1,4 @@
 import React from 'react';
-import { GlobalStyle } from '../../styles/styles.js';
 import styled, { ThemeProvider } from 'styled-components';
 import { data } from '../../data/data.js';
 import { Section, Container } from '../../styles/styles.js';
@@ -15,14 +14,18 @@ export default class Footer extends React.Component {
                             <Social>
                                 {data.social.map(
                                     (socialItem, i) =>
-                                    <SocialItem 
+                                    <Link 
                                         key={i}
                                         index={i}
-                                        name={socialItem.name}
-                                        src={socialItem.image}
-                                        link={socialItem.link}
+                                        alt={socialItem.name}
+                                        href={socialItem.link}
+                                        target="blank"
                                     >
-                                    </SocialItem>
+                                        <SocialItem 
+                                            src={socialItem.image}
+                                        >
+                                        </SocialItem>
+                                    </Link>
                                 )}
                             </Social>
                             <Copyright>© 2019 Jake Moxon</Copyright>
@@ -52,6 +55,8 @@ const Social = styled.footer`
     display: flex;
     justify-content: center;
 `;
+
+const Link = styled.a``;
 
 const SocialItem = styled.img`
     height: 30px;
