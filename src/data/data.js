@@ -12,7 +12,7 @@ export const data = {
             subtitle: 'Food website made as test for Luxus job interview allowing user to dynamically navigate between different cuisines based on options of their choosing.',
             image: require('../img/luxus.jpg'),
             stack: ['React', 'HTML', 'Bootstrap', 'CSS'],
-            link: ''
+            link: 'http://jakemoxon.com/luxus-test'
         },
         {
             title: 'SkyScammer',
