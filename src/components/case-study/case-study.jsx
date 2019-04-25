@@ -83,7 +83,7 @@ const Button = styled.a`
     } 
 `;
 
-const Jobs = styled.div``;
+// const Jobs = styled.div``;
 
 
 

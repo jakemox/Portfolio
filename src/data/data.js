@@ -64,8 +64,8 @@ export const data = {
             stackInfo: [
                 'Back-end was written in PHP using the Laravel MVC framework.',
                 'Map functionality was created with the Mapbox platform.',
-                'Front end code is written in plain Javascript and some React components (with a conversion to a full React app in consideration)',
-                'Content has mostly been collected from public APIs - attractions from Google Places, city pictures using flickr',
+                'Front end code is written in plain Javascript and some React components (with a conversion to a full React app in consideration).',
+                'Content has mostly been collected from public APIs - attractions from Google Places, city pictures using flickr.',
                 'App is responsive and mobile use has been taken into consideration at all stages of the design.'
             ],
             stack: [js, php, laravel, mapbox, html, css],
@@ -105,7 +105,7 @@ export const data = {
             title: 'Weather Forecast',
             subtitle: 'World weather forecasts for the week ahead',
             image: require('../img/weather.jpg'),
-            description: 'How rainy will it be this week? I dont know, you tell me. This simple weather app makes use of the Accuweather API to display hourly, daily and weekly forecasts for locations worldwide. I developed it using React along with Styled Components to provide component based CSS. It is a fully responsive web app.',
+            description: "How rainy will it be this week? I don't know, you tell me. This simple weather app makes use of the Accuweather API to display hourly, daily and weekly forecasts for locations worldwide. I developed it using React along with Styled Components to provide component based CSS. It is a fully responsive web app.",
             stackInfo: [
                 'Code is written using React and bundled using Webpack.',
                 'Styling is provided with Styled Components.',
@@ -122,8 +122,8 @@ export const data = {
             image: require('../img/exchange.jpg'),
             description: "How many euros can I get for this penny? I don't know sir but please ask this lovely app. I programmed this app using object orientated Vanilla JavaScript to allow users to see exchange rates from 6 of the main global currencies to a wide range of international currencies, displaying both buy and sell rates. The data is fetched from 'Exchange Rates' API and shows live rates as well as historic ones. It is fully responsive.",
             stackInfo: [
-                "Code is written in Object Orientated Vanilla JavaScript",
-                "Data is fetched from 'Exchange Rates' API"
+                "Code is written in Object Orientated Vanilla JavaScript.",
+                "Data is fetched from 'Exchange Rates' API."
             ],
             stack: [js, html, css],
             color: '#f29700',

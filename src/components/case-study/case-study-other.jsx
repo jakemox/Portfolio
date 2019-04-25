@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import { Section, Container, SectionTitle } from '../../styles/styles.js';
+import { Section, Container } from '../../styles/styles.js';
 
 export default class CaseStudyOther extends React.Component {
 
@@ -79,6 +79,7 @@ const StackInfo = styled.ul`
 
 const StackInfoItem = styled.li`
     font-size: 0.8rem;
+    text-align: justify;
    
     @media (min-width: 768px) {
         font-size: 1rem;

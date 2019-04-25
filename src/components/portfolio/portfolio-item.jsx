@@ -55,7 +55,7 @@ export default class PortfolioItem extends React.Component {
                         <ButtonContainer hovered={this.state.hovered} index={this.props.index}>
                             <Button
                                 to={`/${this.props.name}`}
-                                hovered={this.state.hovered}
+                                // hovered={this.state.hovered}
                             >VIEW PROJECT</Button>
                         </ButtonContainer>
                     </PortfolioGeneral>
