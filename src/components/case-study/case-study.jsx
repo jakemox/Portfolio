@@ -2,114 +2,88 @@ import React from 'react';
 import styled, { ThemeProvider } from 'styled-components';
 import { Section, Container, SectionTitle } from '../../styles/styles.js';
 
-
 export default class CaseStudyInfo extends React.Component {
+    componentDidMount() {
+        window.scrollTo(0,0);
+    }
+    
     render() {
         return (
-            <ThemeProvider theme={casestudy}>
+            <ThemeProvider theme={casestudyLead(this.props.color)}>
                 <Section>
                     <Container>
-                        <Info>
-                            <Lead>
-                                <SectionTitle>THE PROJECT</SectionTitle>
-                                <Description>{this.props.description}</Description>
-                            </Lead>
-                            <OtherInfo>
-                                <Stack>
-                                    {this.props.stack.map(
-                                        (stackItem, i) =>
-                                        <StackItem 
-                                            key={i}
-                                            index={i}
-                                            name={stackItem.name}
-                                        >
-                                            <StackImage src={stackItem.image}/>
-                                            <StackName>{stackItem.name}</StackName>
-                                        </StackItem>
-                                    )}
-                                </Stack>
-                            </OtherInfo>
-                        </Info>
+                        <Lead>
+                            <SectionTitle>THE PROJECT</SectionTitle>
+                            <Description>{this.props.description}</Description>
+                            <Button target="blank" href={this.props.link}>VIEW PROJECT</Button>
+                            {/* <Jobs></Jobs> */}
+                        </Lead>
                     </Container>
                 </Section>
             </ThemeProvider>
-            
         )
     }
 }
 
-const casestudy = {
-    background: 'white',
-    color: 'black',
+const casestudyLead = (color) => ({
+    background: color,
+    color: 'white',
     margin: '1rem'
-};
+});
 
-const Info = styled.div`
-    /* display: flex; */
+const Lead = styled.div`
+    
     margin: 80px auto;
+    
+    @media (min-width: 768px) {
+        width: 60%;
+    }
 `;
-
-const Lead = styled.div``;
 
 const Description = styled.p`
-    width: 60%;
     text-align: justify;
     margin: auto;
-`;
+    font-size: 0.9rem;
 
-const OtherInfo = styled.div`
-    width: 50%;
-`;
-
-const Stack = styled.div`
-    display: flex;
-    justify-content: space-between;
-    margin: 0.5rem 0;
-
-    @media (min-width: 480px) {
-        margin: 2rem 0;
-    }
-   
     @media (min-width: 768px) {
-        margin: 5rem 0;
-    }
+        font-size: 1rem;
+    }    
 `;
 
-const StackItem = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`;
-
-const StackName = styled.p`
-    text-align: center;
-    color: rgb(100, 100, 100);
+const Button = styled.a`
     font-family: 'Raleway';
-    font-size: 0.6rem;
-    font-weight: 700;
-
-    @media (min-width: 480px) {
-        font-size: 0.7rem;
-    }
-`;
-
-const StackImage = styled.img`
-    height: 50px;
-    width: 50px;
-    margin-bottom: 0.5rem;
-    filter: grayscale(100%);
-    display: none;
+    height: 80%;
+    width: 80%;
+    color: white;
+    background: none;
+    border: solid 2px white;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1rem;
+    height: calc(2.5rem - 4px);
+    text-decoration: none;
+    text-align: center;
+    margin: 2rem auto;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     :hover {
-        filter: grayscale(0%);
+        background: rgba(48,133,163,0.5);
+        color: white;
     }
 
     @media (min-width: 480px) {
-        display: block;
-    }
-  
+        width: 180px;
+    } 
+
     @media (min-width: 992px) {
-        height: 60px;
-        width: 60px;
-    }
+        overflow: hidden;
+    } 
 `;
+
+const Jobs = styled.div``;
+
+
+

@@ -275,10 +275,16 @@ const HeroTitle = styled.div`
 
 const Job = styled.h2`
     font-family: 'Merriweather';
-    font-size: ${props => props.size === 'big' ? '1.5rem' : '1rem'};
+    font-size: ${props => props.size === 'big' ? '1.5rem' : '0.8rem'};
     font-weight: 200;
     color: white;
     margin: 0;
+    max-width: 90%;
+    margin: auto;
+
+    @media (min-width: 480px) {
+        font-size: ${props => props.size === 'big' ? '1.5rem' : '1rem'};
+    }
 
     @media (min-width: 768px) {
         font-size: ${props => props.size === 'big' ? '2rem' : '1rem'};

@@ -53,16 +53,10 @@ export default class PortfolioItem extends React.Component {
                             <Description hovered={this.state.hovered} index={this.props.index}>{this.props.subtitle}</Description>
                         </PortfolioDetails>
                         <ButtonContainer hovered={this.state.hovered} index={this.props.index}>
-                            <Button 
-                                target="blank"
+                            <Button
+                                to={`/${this.props.name}`}
                                 hovered={this.state.hovered}
-                                // href={`/casestudy/${this.props.name}`}
-                                // onClick={this.action}
-                            >
-                                <Link
-                                    to={`/${this.props.name}`}
-                                >VIEW PROJECT</Link>
-                            </Button>
+                            >VIEW PROJECT</Button>
                         </ButtonContainer>
                     </PortfolioGeneral>
                 </Item>
@@ -169,11 +163,13 @@ const PortfolioTitle = styled.h3`
     line-height: 1.5rem;
     text-align: center;
     white-space: nowrap;
+    height: 1.5rem;
 
     @media (min-width: 480px) {
         font-size: 2.5rem;
         top: 166px;
         line-height: 2.5rem;
+        height: 2.5rem;
     } 
 
     @media (min-width: 992px) {
@@ -217,8 +213,10 @@ const ButtonContainer = styled.div`
     } 
 `;
 
-const Button = styled.button`
+const Button = styled(Link)`
     font-family: 'Raleway';
+    height: 80%;
+    width: 80%;
     color: white;
     background: none;
     border: solid 2px white;
@@ -228,7 +226,7 @@ const Button = styled.button`
     height: calc(2.5rem - 4px);
     text-decoration: none;
     text-align: center;
-    margin: 2rem;
+    margin: 2rem auto;
     white-space: nowrap;
     display: flex;
     justify-content: center;
@@ -241,11 +239,9 @@ const Button = styled.button`
 
     @media (min-width: 480px) {
         width: 180px;
-        margin: 2rem auto;
     } 
 
     @media (min-width: 992px) {
-        margin: 2rem;
         overflow: hidden;
     } 
 `;

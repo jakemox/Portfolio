@@ -4,11 +4,15 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
     h1 {
         font-family: 'Raleway';
-        font-size: 2rem;
+        font-size: 1.5rem;
         font-weight: 900;
         margin: 1rem;
         color: white;
         letter-spacing: 0.5px;
+
+        @media (min-width: 480px) {
+            font-size: 2rem;
+        }
 
         @media (min-width: 768px) {
             font-size: 3.5rem;
@@ -38,6 +42,7 @@ export const Container = styled.div`
 
 export const Section = styled.section`
     background: ${props => (props.theme.background)};
+    color: ${props => props.theme.color};
     height: ${props => (props.theme.height)};
     background-position: center;
     background-size: cover;

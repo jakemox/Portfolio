@@ -8,6 +8,7 @@ import Hero from './components/hero/hero.jsx';
 // import About from './components/about/about.jsx';
 import Footer from './components/footer/footer.jsx';
 import CaseStudyInfo from './components/case-study/case-study.jsx';
+import CaseStudyOther from './components/case-study/case-study-other.jsx';
 
 class App extends Component {
 	render() {
@@ -40,9 +41,13 @@ const CaseStudy = ({match, itemData}) => {
 				image={project.image}
 			/>
 			<CaseStudyInfo
+				color={project.color}
 				description={project.description}
-				stack={project.stack}
 				link={project.link}
+			/>
+			<CaseStudyOther 
+				stackInfo={project.stackInfo}
+				stack={project.stack}
 			/>
 			<Footer />
 		</>
