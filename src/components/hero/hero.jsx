@@ -1,12 +1,13 @@
 import React from 'react';
 import { GlobalStyle } from '../../styles/styles.js';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
+import { Link } from "react-router-dom";
 import { disableBodyScroll } from 'body-scroll-lock';
 import montreal from '../../img/montreal.jpg';
 import logo from '../../img/logo.svg';
 import burger from '../../img/burger.svg';
 import cross from '../../img/cross.svg';
-import { Section } from '../../styles/styles.js';
+// import { Section } from '../../styles/styles.js';
 
 export default class Hero extends React.Component {
     constructor(props) {
@@ -14,7 +15,8 @@ export default class Hero extends React.Component {
 
         this.state = {
             navSize: 1,
-            navExpanded: false
+            navExpanded: false,
+            // page: this.props.page
         }
 
         this.navExpand = this.navExpand.bind(this);
@@ -64,42 +66,73 @@ export default class Hero extends React.Component {
 
     render() {
         return (
-            <ThemeProvider theme={header}>
-                <>
-                    <GlobalStyle />
-                    <Section>
-                        <NavBar navSize={this.state.navSize}>
-                            <LogoLink navSize={this.state.navSize} href="/">
-                                <Logo navSize={this.state.navSize} src={logo} alt="Logo"></Logo>
-                            </LogoLink>
-                            <Burger onClick={this.navExpand}>
-                                <BurgerIcon visible={this.state.navExpanded} src={burger}></BurgerIcon>
-                                <CrossIcon visible={this.state.navExpanded} src={cross}></CrossIcon>
-                            </Burger>
-                            <NavItems navExpanded={this.state.navExpanded}>
-                                <NavList><NavLink onClick={this.scrollToPortfolio}>PORTFOLIO</NavLink></NavList>
-                                {/* <NavList><NavLink href="#skills">SKILLS</NavLink></NavList> */}
-                                <NavList><NavLink onClick={this.aboutVisible}>ABOUT</NavLink></NavList>
-                                {/* <NavList><NavLink href="/graphics.pdf" target="blank">GRAPHICS</NavLink></NavList> */}
-                                {/* <a href="#contactme">Contact</a> */}
+            <>
+                <GlobalStyle />
+                <Section 
+                    image={this.props.page === 'home' ? montreal : this.props.image}
+                    size={this.props.page === 'home' ? 'big' : 'small'}
+                >
+                    <NavBar navSize={this.state.navSize}>
+                        <LogoLink navSize={this.state.navSize} href="/">
+                            <Logo navSize={this.state.navSize} src={logo} alt="Logo"></Logo>
+                        </LogoLink>
+                        <Burger onClick={this.navExpand}>
+                            <BurgerIcon visible={this.state.navExpanded} src={burger}></BurgerIcon>
+                            <CrossIcon visible={this.state.navExpanded} src={cross}></CrossIcon>
+                        </Burger>
+                        {this.props.page === 'home' ? 
+                            <NavItems navExpanded={this.state.navExpanded}>    
+                                <NavList>
+                                    <NavLink onClick={this.scrollToPortfolio}>PORTFOLIO</NavLink>
+                                </NavList>
+                                <NavList>
+                                    <NavLink onClick={this.aboutVisible}>ABOUT</NavLink>
+                                </NavList>
+                                </NavItems>
+                        :
+                            <NavItems navExpanded={this.state.navExpanded}>    
+                                <NavList>
+                                    <HomeLink to="/">RETURN HOME</HomeLink>
+                                </NavList>
                             </NavItems>
-                        </NavBar>
-                        <HeroTitle>
-                            <h1>JAKE &nbsp;MOXON</h1>
-                            <Job>Web Developer</Job>
-                        </HeroTitle>
-                    </Section>
-                </>
-            </ThemeProvider>
+                        }
+                    </NavBar>
+                    <HeroTitle>
+                        <h1>
+                            {this.props.page === 'home' ? `JAKE ${String.fromCharCode(160)}MOXON` : this.props.title.toUpperCase()}
+                        </h1>
+                        <Job
+                            size={this.props.page === 'home' ? 'big' : 'small'}>{this.props.page === 'home' ? `Web Developer` : this.props.subtitle}
+                        </Job>
+                    </HeroTitle>
+                </Section>
+            </>
         )
     }
 };
 
-const header = {
-    background: `url(${montreal})`,
-    height: '100vh',
-    color: 'white',
-};
+const Section = styled.section`
+    background: ${props => `
+        linear-gradient(
+            to bottom,
+            ${props.size === 'small' ? 
+                'rgba(0,0,0,0.5), rgba(0,0,0,0.5)' : 
+                'rgba(48,133,163,0), rgba(0, 0, 0, 0)'
+            }
+        ),
+        url(${props.image})`};
+    height: ${props => props.size === 'big' ? '100vh' : 'calc(100vh - 60px)'};
+    color: white;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media (min-width: 992px) {
+        background-attachment: fixed;
+    }
+`;
 
 const NavBar = styled.nav`
     position: fixed;
@@ -180,6 +213,21 @@ const NavLink = styled.a`
     }
 `;
 
+const HomeLink = styled(Link)`
+    text-decoration: none;
+    color: #FFE5B4;
+    margin: 0 1rem 0 0;
+    font-family: 'Raleway';
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    cursor: pointer;
+
+    @media (min-width: 768px) {
+        margin: 0 0.75rem;
+    }
+`;
+
 const NavItems = styled.ul`
     line-height: 45px;
     height: ${props => props.navExpanded === false ? '0px' : '100px'};
@@ -227,13 +275,19 @@ const HeroTitle = styled.div`
 
 const Job = styled.h2`
     font-family: 'Merriweather';
-    font-size: 1.5rem;
+    font-size: ${props => props.size === 'big' ? '1.5rem' : '0.8rem'};
     font-weight: 200;
     color: white;
     margin: 0;
+    max-width: 90%;
+    margin: auto;
+
+    @media (min-width: 480px) {
+        font-size: ${props => props.size === 'big' ? '1.5rem' : '1rem'};
+    }
 
     @media (min-width: 768px) {
-        font-size: 2rem;
+        font-size: ${props => props.size === 'big' ? '2rem' : '1rem'};
     }
 `;
 
