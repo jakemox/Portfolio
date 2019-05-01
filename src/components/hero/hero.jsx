@@ -1,5 +1,4 @@
 import React from 'react';
-import { GlobalStyle } from '../../styles/styles.js';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import { disableBodyScroll } from 'body-scroll-lock';
@@ -7,7 +6,7 @@ import montreal from '../../img/montreal.jpg';
 import logo from '../../img/logo.svg';
 import burger from '../../img/burger.svg';
 import cross from '../../img/cross.svg';
-// import { Section } from '../../styles/styles.js';
+import arrow from '../../img/down-arrow.svg';
 
 export default class Hero extends React.Component {
     constructor(props) {
@@ -67,13 +66,12 @@ export default class Hero extends React.Component {
     render() {
         return (
             <>
-                <GlobalStyle />
                 <Section 
                     image={this.props.page === 'home' ? montreal : this.props.image}
                     size={this.props.page === 'home' ? 'big' : 'small'}
                 >
                     <NavBar navSize={this.state.navSize}>
-                        <LogoLink navSize={this.state.navSize} href="/">
+                        <LogoLink navSize={this.state.navSize} to="/">
                             <Logo navSize={this.state.navSize} src={logo} alt="Logo"></Logo>
                         </LogoLink>
                         <Burger onClick={this.navExpand}>
@@ -98,13 +96,14 @@ export default class Hero extends React.Component {
                         }
                     </NavBar>
                     <HeroTitle>
-                        <h1>
+                        <Title size={this.props.page === 'home' ? 'big' : 'small'}>
                             {this.props.page === 'home' ? `JAKE ${String.fromCharCode(160)}MOXON` : this.props.title.toUpperCase()}
-                        </h1>
+                        </Title>
                         <Job
                             size={this.props.page === 'home' ? 'big' : 'small'}>{this.props.page === 'home' ? `Web Developer` : this.props.subtitle}
                         </Job>
                     </HeroTitle>
+                    <Arrow src={arrow} alt="Arrow" onClick={this.scrollToPortfolio}></Arrow>
                 </Section>
             </>
         )
@@ -126,8 +125,10 @@ const Section = styled.section`
     background-position: center;
     background-size: cover;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     @media (min-width: 992px) {
         background-attachment: fixed;
@@ -252,7 +253,7 @@ const NavItems = styled.ul`
     }
 `;
 
-const LogoLink = styled.a`
+const LogoLink = styled(Link)`
     margin: 0;
     height: 42px;
 
@@ -273,6 +274,23 @@ const HeroTitle = styled.div`
     text-align: center;
 `;
 
+const Title = styled.h1`
+    font-family: 'Raleway';
+    font-size: ${props => props.size === 'big' ? '2rem' : '1.5rem'};
+    font-weight: 900;
+    margin: 1rem;
+    color: white;
+    letter-spacing: 0.5px;
+
+    @media (min-width: 480px) {
+        font-size: 2rem;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 3.5rem;
+    }
+`;
+
 const Job = styled.h2`
     font-family: 'Merriweather';
     font-size: ${props => props.size === 'big' ? '1.5rem' : '0.8rem'};
@@ -290,4 +308,24 @@ const Job = styled.h2`
         font-size: ${props => props.size === 'big' ? '2rem' : '1rem'};
     }
 `;
+
+const Arrow = styled.img`
+    width: 30px;
+    position: absolute;
+    bottom: 65px;
+    left: calc(50vw - 15px);
+    cursor: pointer;
+    animation: mover 1s infinite  alternate;
+    @keyframes mover {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-10px); }
+    }
+
+    @media (min-width: 768px) {
+        width: 50px;
+        left: calc(50vw - 25px);
+    }
+`;
+
+
 

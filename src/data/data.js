@@ -95,6 +95,7 @@ export const data = {
             stackInfo: [
                 'Code is written using React and bundled using Webpack.',
                 'Data is fetched from Kayak API.',
+                'Used Luxon library to work with dates and times.'
             ],
             stack: [react, html, css, kayak],
             color: 'rgb(120, 209, 236)',
@@ -109,7 +110,8 @@ export const data = {
             stackInfo: [
                 'Code is written using React and bundled using Webpack.',
                 'Styling is provided with Styled Components.',
-                'Data is fetched from Accuweather API.'
+                'Data is fetched from Accuweather API.',
+                'Used Luxon library to work with dates and times.'
             ],
             stack: [react, html, styledComp, accuweather],
             color: 'rgb(120, 209, 236)',
@@ -123,6 +125,7 @@ export const data = {
             description: "How many euros can I get for this penny? I don't know sir but please ask this lovely app. I programmed this app using object orientated Vanilla JavaScript to allow users to see exchange rates from 6 of the main global currencies to a wide range of international currencies, displaying both buy and sell rates. The data is fetched from 'Exchange Rates' API and shows live rates as well as historic ones. It is fully responsive.",
             stackInfo: [
                 "Code is written in Object Orientated Vanilla JavaScript.",
+                "Three components used in total to create app.",
                 "Data is fetched from 'Exchange Rates' API."
             ],
             stack: [js, html, css],
