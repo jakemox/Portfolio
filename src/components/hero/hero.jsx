@@ -312,7 +312,7 @@ const Job = styled.h2`
 const Arrow = styled.img`
     width: 30px;
     position: absolute;
-    bottom: 65px;
+    bottom: 100px;
     left: calc(50vw - 15px);
     cursor: pointer;
     animation: mover 1s infinite  alternate;
@@ -323,6 +323,7 @@ const Arrow = styled.img`
 
     @media (min-width: 768px) {
         width: 50px;
+        bottom: 65px;
         left: calc(50vw - 25px);
     }
 `;
